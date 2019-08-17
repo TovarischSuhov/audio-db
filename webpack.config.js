@@ -1,4 +1,6 @@
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 
 module.exports = {
     module: {
@@ -30,8 +32,21 @@ module.exports = {
             },
         ]
     },
+    plugins: [
+            new HtmlWebpackPlugin({
+                inlineSource: '.(js|css)$',
+                filename: 'index.html',
+                title: "Audio-DB",
+                meta: {
+                    charset: "utf-8",
+                    name: "vieport",
+                    content: "initial-scale=1.0,width=device-width"
+                },
+                template: 'src/index.ejs'
+            }),
+    ],
     output: {
-        path: __dirname + "result",
+        path: __dirname,
         filename: "index.js",
     }
 }

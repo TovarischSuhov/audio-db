@@ -19,3 +19,5 @@ class AboutPane extends Component {
         );
     }
 }
+
+export default AboutPane;

@@ -14,3 +14,5 @@ class MainPane extends Component {
         );
     }
 }
+
+export default MainPane;

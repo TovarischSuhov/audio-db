@@ -7,8 +7,10 @@ class TagButton extends Component {
         return (
             <div className="tagButton">
                 <label>{this.props.value}</label>
-                <button onClick={}><img src={removeIcon} /></button>
+                <button onClick={this.props.onTagRemove}><img src={removeIcon} /></button>
             </div>
         );
     }
 }
+
+export default TagButton;

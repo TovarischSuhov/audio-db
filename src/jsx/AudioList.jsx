@@ -4,9 +4,9 @@ import "../style/audiolist.less";
 
 class AudioList extends Component {
     render() {
-        list = <ul />;
+        let list = <ul />;
         for (audio in this.props.audio) {
-            list.appendChild(<li><Audio audio={this.props.audio[audio]}></li>);
+            list.appendChild(<li><Audio audio={this.props.audio[audio]} /></li>);
         }
         return (
             <div className="audioList">
@@ -15,3 +15,5 @@ class AudioList extends Component {
         );
     }
 }
+
+export default AudioList;
