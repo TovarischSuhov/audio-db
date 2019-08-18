@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
+var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     module: {
@@ -15,6 +16,9 @@ module.exports = {
             {
                 test: /\.less$/,
                 use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                    },
                     'css-loader',
                     'less-loader'
                 ],
@@ -43,6 +47,11 @@ module.exports = {
                     content: "initial-scale=1.0,width=device-width"
                 },
                 template: 'src/index.ejs'
+            }),
+            new MiniCssExtractPlugin({
+                filename: "[name].css",
+                chunkFilename: "[id].css",
+                ignoreOrder: false
             }),
     ],
     output: {

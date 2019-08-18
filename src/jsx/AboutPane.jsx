@@ -14,7 +14,7 @@ class AboutPane extends Component {
                 <AudioName />
                 <AudioAuthor />
                 <AudioLength />
-                <TagFilter />
+                <TagFilter extraClass="aboutElement"/>
             </div>
         );
     }

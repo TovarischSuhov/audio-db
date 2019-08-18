@@ -5,7 +5,8 @@ import "../style/audiolength.less";
 class AudioLength extends Component {
     render() {
         return (
-            <div className="audioLength">
+            <div className="audioLength aboutElement">
+            <label className="aboutElement">3:30</label>
             </div>
         )
     }

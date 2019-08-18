@@ -1,16 +1,19 @@
 import React, { Component } from "react";
+import Audio from "./Audio.jsx";
+
 
 import "../style/audiolist.less";
 
 class AudioList extends Component {
     render() {
-        let list = <ul />;
-        for (audio in this.props.audio) {
-            list.appendChild(<li><Audio audio={this.props.audio[audio]} /></li>);
+        const audioList = this.props.audioList;
+        let listItems = [];
+        for (let i in audioList) {
+            listItems.push(<li key={i}><Audio audio={audioList[i]} /></li>);
         }
         return (
             <div className="audioList">
-            {list}
+            <ul>{listItems}</ul>
             </div>
         );
     }
